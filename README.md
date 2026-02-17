@@ -1,4 +1,13 @@
-# ContadorDe_Clics
+Main.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
 
 App.jsx
 import Contador from "./components/Contador";
@@ -9,8 +18,16 @@ function App() {
 
 export default App;
 
-Cotador.jsx
+Alerta.jsx
+function Alerta ({ mensaje}) {
+    return (
+        <div className="mt-4 bg-red-100 text-red-700 p-3 rounded-lg text-center">
+        {mensaje}
+        </div>
+    );
+}
 
+Contador.jsx
 import { useState } from "react";
 import Alerta from "./Alerta";
 
@@ -54,7 +71,7 @@ function Contador() {
             </button>
 
             onClick={descrementar}
-            className="bg-red-500 text-white px-4 py-2 rounded-lg horver:bg-re-600 trnsition"
+            className="bg-red-500 text-white px-4 py-2 rounded-lg horver:bg-re-600 transition"
             >
              Disminuir 
              </button>
@@ -73,25 +90,3 @@ function Contador() {
 }
 
 export default Contador;
-
-Main.jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./index.css";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-);
-
-
-Alerta-jsx
-
-function Alerta ({ mensaje}) {
-    return (
-        <div className="mt-4 bg-red-100 text-red-700 p-3 rounded-lg text-center">
-        {mensaje}
-        </div>
-    );
-}
