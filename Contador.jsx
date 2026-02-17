@@ -1,0 +1,62 @@
+import { useState } from "react";
+import Alerta from "./Alerta";
+
+function Contador() {
+    const [contador, setContador] =useState(0);
+    const [mensajeError, setMensajeError] = useState("");
+
+    const incrementar = () => {
+        setMensajeError("");
+        setContador(contador + 1);
+    };
+
+    const decrementar = () => {
+        if (contador === 0) {
+            setMensajeError("No se puede disminuir mas, El contador esta en 0.");
+            return;
+        }
+
+        setMensajeError("");
+        setContador(contador - 1);
+    };
+
+    const reiniciar = () => {
+        setMensajeError("");
+        setContador(0);
+    };
+
+    return (
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="bg-white p-8 rounded-2xl shadow-lg w-96 text-center">
+        <h1 className="text-2xl font-bold mb-6">
+            Contador de clics
+        </h1>
+
+        <p className="text--5xl font-bold mb-6 ">
+            <button 
+            onClick ={incrementar}
+            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+            >
+                Incrementar
+            </button>
+
+            onClick={descrementar}
+            className="bg-red-500 text-white px-4 py-2 rounded-lg horver:bg-re-600 transition"
+            >
+             Disminuir 
+             </button>
+
+             </button>
+             onClick={reiniciar}
+             className="bg-red-500 text-white px-4 py-2 rounded-lg horver:bg-re-600 trnsition "
+             
+             >
+               Reiniciar
+               </button>
+               </div>
+
+             </div>
+    );
+}
+
+export default Contador;
